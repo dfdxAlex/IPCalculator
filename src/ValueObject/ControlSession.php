@@ -1,5 +1,5 @@
 <?php
-namespace program\IPCalculator\src\ValueObject;
+namespace src\ValueObject;
 
 // Класс для контроля наличия и управления переменными Сессий
 // Klasa do kontroli obecności i zarządzania zmiennymi sesji

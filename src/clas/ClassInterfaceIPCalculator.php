@@ -1,16 +1,12 @@
 <?php
-namespace program\IPCalculator\src\clas;
+namespace src\clas;
 
 class ClassInterfaceIPCalculator
 {
-    public function __construct()
-    {
-    }
-
     public function interfaceIPCalculatorGroups()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
-        $ContrlSession = new \program\IPCalculator\src\ValueObject\ControlSession();
+        $ContrlSession = new \src\ValueObject\ControlSession();
         if ($ContrlSession->showUserMenu()) {
         // интерфейс выбора вычислений айпишников по группам А,B ...
         echo '<div class="interface-ip-calculator-div">
@@ -103,7 +99,7 @@ class ClassInterfaceIPCalculator
 
     public function interfaceIPCalculatorCIDR()
     {
-        $ContrlSession = new \program\IPCalculator\src\ValueObject\ControlSession();
+        $ContrlSession = new \src\ValueObject\ControlSession();
         if ($ContrlSession->showUserMenu()) {
             echo '<div class="IPV4-CIDR">
                      <form action="IPCalculator.php" method="post">

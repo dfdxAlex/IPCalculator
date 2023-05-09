@@ -1,36 +1,38 @@
 <?php
-namespace program\IPCalculator;
+// namespace class\redaktor;
 
 //файл сгенерирован CMS-DFDX 2022-03-20 19:06:45
 //file generated CMS-DFDX 2022-03-20 19:06:45
 session_start();
-require "../../funcii.php";
-require "../../functionDfdx.php";
-require "../../image/swapImages.php";
-require "../../class.php";
+require "funcii.php";
+require "functionDfdx.php";
+// require "../../image/swapImages.php";
+require "class/autoloader.php";
 
-use \class\redaktor\Modul;
-use \class\redaktor\statistic;
-use \class\redaktor\Header;
-use \class\redaktor\futter;
-use \class\redaktor\NonTemplates;
-use \program\IPCalculator\src\ClassIPCalculator;
+use class\redaktor\Modul;
+use class\redaktor\statistic;
+use class\redaktor\Header;
+use class\redaktor\futter;
+use class\redaktor\NonTemplates;
+use src\ClassIPCalculator;
 
-  $redaktor= new Modul();
-  $statistik = new statistic();
-  $header = new Header();
-  $futter = new futter();
-  $nonTemplates = new NonTemplates();
-  $ipCalculator = new ClassIPCalculator();
+$redaktor = new Modul();
+$statistik = new statistic();
+$header = new Header();
+$futter = new futter();
+$nonTemplates = new NonTemplates();
+$ipCalculator = new ClassIPCalculator();
 
 echo '<!DOCTYPE html>';
 echo '<html lang="ru">';
 echo '<head>';
 
-  $statistik->googleAnalitic('https://www.googletagmanager.com/gtag/js?id=G-MF3F7YTKCQ'); 
+  // $statistik->googleAnalitic('https://www.googletagmanager.com/gtag/js?id=G-MF3F7YTKCQ'); 
   $header->headStart('<title>ipCalculator</title>');
-  $header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('styli.css'),\class\nonBD\SearchPathFromFile::createObj()->searchPath('dfdx.css'),\class\nonBD\SearchPathFromFile::createObj()->searchPath('styliipCalculator.css')]);
-  //$header->headBootStrap5([$header->searcNamePath('styli.css'),$header->searcNamePath('dfdx.css')]);
+  echo VER;
+  // alteration for an independent project with disabling styles from the dfdx site
+  // переделка под самостоятельный проект с отключением стилей от сайта dfdx
+  $header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('styliipCalculator.css')]);
 
 echo '</head>';
 echo '<body>';
@@ -51,7 +53,8 @@ $header->firstCreationSessionVariables();
 // The function checks the login and password fields, if they are filled, then pulls the user status 
 // from the database and enters it into the $_SESSION["status"] variable
 // Also, the function handles the button press Enter and Exit
-$header->checkUserStatus();
+//$header->checkUserStatus();
+$_SESSION['status']=5;
 
 echo '<section class="container-fluid">';
 echo '<div class="row">';
@@ -61,19 +64,19 @@ echo '<div class="row">';
 // Podpis klasy administratora modułu $redaktor
 // the function downloads and shows the number of coins the user has
 // Modul $redaktor admin class signature
-$header->showNumberOfCoins($redaktor);
+// $header->showNumberOfCoins($redaktor);
 
 // Функция реализует установку и обработку верхнего главного меню
 // Funkcja realizuje ustawienia i przetwarzanie w górnym menu głównym
 // The function implements the setting and processing of the top main menu
-$header->topMenuProcessing();
+//---$header->topMenuProcessing();
 echo '</div>';
 echo '</section>';
 
 // Функция выводит картинку шапки
 // Funkcja wyświetla obraz nagłówka
 // The function displays the header image
-$header->showSiteHeader('../../image/logo.png');
+//---$header->showSiteHeader('image/logo.png');
 
  // Функция показывает раздел сайта под шапкой, либо, если это статья по персональной ссылке, то бегущую строку названия статьи
  // Если картинки нет для раздела, то так-же будет выведена бегущая строка раздела сайта
@@ -81,7 +84,7 @@ $header->showSiteHeader('../../image/logo.png');
  // Jeśli nie ma obrazu dla sekcji, zostanie również wyświetlony bieżący wiersz sekcji witryny
  // The function shows the section of the site under the header, or, if this is an article via a personal link, then the scrolling line of the article title
  // If there is no picture for the section, then the running line of the site section will also be displayed
- $header->showSiteSection('../../image/home.png','ipCalculator');   
+//  $header->showSiteSection('../../image/home.png','ipCalculator');   
 
 echo '<section class="container-fluid">';
 echo '<div class="row">';
@@ -89,7 +92,7 @@ echo '<div class="row">';
 // блок для вывода левого меню
 // blok wyświetlania lewego menu
 // block for displaying the left menu
-$nonTemplates->leftMenu();
+// $nonTemplates->leftMenu();
 
 // имя таблица со статьями для функции news1
 // nazwa tabeli z artykułami dla funkcji news1
@@ -117,8 +120,8 @@ echo '</div>';
 echo '</section>';
 // Функция выводит нижнюю часть сайта
 // The function displays the bottom of the site
-$futter->futterGeneral($statistik,$metka);
+//---$futter->futterGeneral($statistik,$metka);
 
 // функция подключает вторую часть бутстрапа и закрывает документ html
 // the function connects the second part of the bootstrap and closes the html document
-$futter->closeHtmlDok();
+//---$futter->closeHtmlDok();
