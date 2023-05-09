@@ -76,7 +76,7 @@ echo '</section>';
 // Функция выводит картинку шапки
 // Funkcja wyświetla obraz nagłówka
 // The function displays the header image
-//---$header->showSiteHeader('image/logo.png');
+$header->showSiteHeader('image/logo.png');
 
  // Функция показывает раздел сайта под шапкой, либо, если это статья по персональной ссылке, то бегущую строку названия статьи
  // Если картинки нет для раздела, то так-же будет выведена бегущая строка раздела сайта
