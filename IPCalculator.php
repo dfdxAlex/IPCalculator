@@ -3,8 +3,8 @@
 //файл сгенерирован CMS-DFDX 2022-03-20 19:06:45
 //file generated CMS-DFDX 2022-03-20 19:06:45
 session_start();
-require "funcii.php";
-require "functionDfdx.php";
+// require "funcii.php";
+// require "functionDfdx.php";
 require "class/autoloader.php";
 
 use class\redaktor\statistic;
@@ -21,12 +21,12 @@ echo '<!DOCTYPE html>';
 echo '<html lang="ru">';
 echo '<head>';
 
-  $header->headStart('<title>ipCalculator</title>');
-  // alteration for an independent project with disabling styles from the dfdx site
-  // переделка под самостоятельный проект с отключением стилей от сайта dfdx
-  $header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('styliipCalculator.css')]);
+//This is Header
+$header->headStart('<title>ipCalculator</title>');
 
-echo '</head>';
+// alteration for an independent project with disabling styles from the dfdx site
+// переделка под самостоятельный проект с отключением стилей от сайта dfdx
+$header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('styliipCalculator.css')]);echo '</head>';
 echo '<body>';
 
 // функция создает переменные сессий при первом посещении страницы
@@ -41,22 +41,21 @@ $_SESSION['status']=5;
 // The function displays the header image
 $header->showSiteHeader('image/logo.png');
 
+/////////////////////////// open center
 echo '<section class="container-fluid">';
 echo '<div class="row">';
+echo '<div class="col-xl-8 col-lg-8 col-md-9 col-sm-8 col-12">';  
 
 //метка для счётчика статистики посещения конкретной страницы
 //label for the statistics counter of visits to a specific page
 $metka="ipCalculator"; //метка для счётчика статистики посещения конкретной страницы
 
-echo '<div class="col-xl-8 col-lg-8 col-md-9 col-sm-8 col-12">';  // Центр
 // Запуск объекта, который определяет бизнес логику данной страницы
 // Run an object that defines the business logic of this page
 $ipCalculator->businesIPCalculator();
-echo '</div>'; //закрыть центр
-
-echo '</div>';
-echo '</section>';
-
+echo '</div>';     //close center col
+echo '</div>';     //close center row
+echo '</section>'; //close center section
 
 // Функция выводит нижнюю часть сайта
 // The function displays the bottom of the site
