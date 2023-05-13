@@ -23,19 +23,14 @@ class ClassInterfaceIPCalculator
     }
 
     public function interfaceIPCalculatorGroups()
-    {
+    {//echo $this->interfaceTrueFalse;
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
-        // $ContrlSession = new \src\ValueObject\ControlSession();
         if ($this->interfaceTrueFalse->showUserMenu()) {
             echo $this->interfaceTrueFalse;
 
-        } else if ($_SESSION['button-IP-Groups']=='A' || $_SESSION['button-IP-Groups']=='B'
-                || $_SESSION['button-IP-Groups']=='C' || $_SESSION['button-IP-Groups']=='D'
-                || $_SESSION['button-IP-Groups']=='E') {
-            echo '<h3>Параметры сети класса '.$_SESSION['button-IP-Groups'].'</h3>
-                  <p>Все адресное пространство занимает 32 бита. Записывается в десятичном виде и состоит из 4 однобайтовых чисел, разделенных точкой, однако компьютер их принимает как 32 бита одним значением.</p>';
-            
+        } else {
             if ($_SESSION['button-IP-Groups']=='A') {
+                echo new TextStart;
                 echo '<div class="network-parameter">
                           <p>Сеть данного класса маркируется нулем в первом бите данного 32-битного числа.</p>
                           <p>Остальные 31 бит содержат информацию об адресе самой сети и о конкретном хосте(компьютере)</p>
@@ -45,10 +40,10 @@ class ClassInterfaceIPCalculator
                           <p>Число сетей типа A с адресами IPv4 может быть 127</p>
                           <p>Число хостов или пользователей в сети типа A с адресами IPv4 может быть 16 777 216</p>
                       </div>';
-
             }
 
             if ($_SESSION['button-IP-Groups']=='B') {
+                echo new TextStart;
                 echo '<div class="network-parameter">
                           <p>Сеть данного класса маркируется единицей и нулем в первых двух битах (10) данного 32-битного числа.</p>
                           <p>Остальные 30 бит содержат информацию об адресе самой сети и о конкретном хосте(компьютере)</p>
@@ -58,10 +53,10 @@ class ClassInterfaceIPCalculator
                           <p>Число сетей типа B с адресами IPv4 может быть 16 384</p>
                           <p>Число хостов или пользователей в сети типа B с адресами IPv4 может быть 65 536</p>
                       </div>';
-
             }
 
             if ($_SESSION['button-IP-Groups']=='C') {
+                echo new TextStart;
                 echo '<div class="network-parameter">
                           <p>Сеть данного класса маркируется единицей, единицей и нулем в первых трех битах (110) данного 32-битного числа.</p>
                           <p>Остальные 29 бит содержат информацию об адресе самой сети и о конкретном хосте(компьютере)</p>
@@ -75,21 +70,21 @@ class ClassInterfaceIPCalculator
             }
 
             if ($_SESSION['button-IP-Groups']=='D') {
+                echo new TextStart;
                 echo '<div class="network-parameter">
                           <p>Сеть данного класса маркируется единицей, единицей, единицей и нулем в первых четырех битах (1110) данного 32-битного числа.</p>
                           <p>Сеть находится в адресном пространстве 224.0.0.0-239.255.255.255</p>
                           <p>Используются адреса для многоадресной рассылки multicast</p>
                       </div>';
-
             }
 
             if ($_SESSION['button-IP-Groups']=='E') {
+                echo new TextStart;
                 echo '<div class="network-parameter">
                           <p>Сеть данного класса маркируется единицей, единицей, единицей и нулем в первых четырех битах (1111) данного 32-битного числа.</p>
                           <p>Сеть находится в адресном пространстве 240.0.0.0-255.255.255.255</p>
                           <p>Зарегистрированы для будущего использования</p>
                       </div>';
-
             }
 
             // показать кнопку сбросса
@@ -104,7 +99,6 @@ class ClassInterfaceIPCalculator
 
     public function interfaceIPCalculatorCIDR()
     {
-        // $ContrlSession = new \src\ValueObject\ControlSession();
         if ($this->interfaceTrueFalse->showUserMenu()) ;
         
         else if ($_SESSION['ipSSIDR']==0) {
