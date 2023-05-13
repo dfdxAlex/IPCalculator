@@ -43,9 +43,12 @@ class ControlSession
             $_SESSION['mask4']=0;
     }
 
-    // функция устанавливает значения переменным сессий, в зависимости от имеющихся значений в массиве пост
-    // funkcja ustawia wartości zmiennych sesji, w zależności od wartości w tablicy postu
-    // the function sets values to session variables, depending on the values in the post array
+    // функция устанавливает значения переменным сессий, в зависимости от 
+    // имеющихся значений в массиве пост
+    // funkcja ustawia wartości zmiennych sesji, w zależności od wartości 
+    // w tablicy postu
+    // the function sets values to session variables, depending on the 
+    // values in the post array
     public function varSet()
     {
         if (isset($_POST['button-IP-Groups'])) {
