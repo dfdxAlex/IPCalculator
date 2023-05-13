@@ -6,6 +6,7 @@ namespace src\clas;
  * dedicated to the network address
  * session variable is used as an input parameter
  * $_SESSION['ipMask']
+ * 
  * класс возвращает число хостов в сети, отнимая от 32-х число битов, 
  * выделенных под адрес сети
  * в качестве входного параметра используется переменная сессии 
