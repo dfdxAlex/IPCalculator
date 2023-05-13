@@ -134,11 +134,11 @@ class ClassInterfaceIPCalculator
 
             echo '<p>Первый адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2())).'</p>';
 
-            echo '<p>Число хостов в сети: '.$this->numerHost().'<p>';
+            echo '<p>Число хостов в сети: '.NumerHost::createNumerHost()->numerHost().'<p>';
 
-            echo '<p>Последний адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2()),$this->numerHost()).'</p>';
+            echo '<p>Последний адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
 
-            echo '<p>Широковещательный адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2()),(1+$this->numerHost())).'</p>';
+            echo '<p>Широковещательный адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
             
             echo '<form action="IPCalculator.php" method="post">
                       <input type="submit" name="ipSSIDRreset" value="Вернуться" class="button-ipS btn">
@@ -332,12 +332,8 @@ class ClassInterfaceIPCalculator
 
     }
 
-    // функция возвращает число хостов в сети, отнимая от 32-х число битов, выделенных под адрес сети
-    function numerHost()
-    {
-        $power=32-$_SESSION['ipMask'];
-        $power=pow(2, $power);
-        $power-=2;
-        return $power;
-    }
+    
+    // функция возвращает число хостов в сети, отнимая от 32-х число битов, 
+    // выделенных под адрес сети
+    //NumerHost::createNumerHost()->numerHost()
 }
