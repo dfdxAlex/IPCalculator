@@ -5,11 +5,13 @@ class ClassInterfaceIPCalculator
 {
     private $nomer10to2;
     private $maska2;
+    private $ip10To2;
 
     public function __construct()
     {
         $this->nomer10to2 = new Nomer10to2;
         $this->maska2 = new Maska2;
+        $this->ip10To2 = new Ip10To2;
     }
 
     public function interfaceIPCalculatorGroups()
@@ -131,7 +133,8 @@ class ClassInterfaceIPCalculator
                   </div>';
         } else if ($_SESSION['ipSSIDR']==0) {
 
-            $this->mask4BytTo32Bit();
+            // $this->mask4BytTo32Bit();
+            new Mask4BytTo32Bit;
             
             echo '<p>Вы проверяете адрес: '.$this->ip().'</p>';
 
@@ -139,15 +142,15 @@ class ClassInterfaceIPCalculator
 
             echo '<p>Десятичная маска подсети: '.$this->maska10($this->maska2->maska2()).'</p>';
 
-            echo '<p>Адрес сети: '.$this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2->maska2()).'</p>';
+            echo '<p>Адрес сети: '.$this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip()),$this->maska2->maska2()).'</p>';
 
-            echo '<p>Первый адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2->maska2())).'</p>';
+            echo '<p>Первый адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip()),$this->maska2->maska2())).'</p>';
 
             echo '<p>Число хостов в сети: '.NumerHost::createNumerHost()->numerHost().'<p>';
 
-            echo '<p>Последний адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
+            echo '<p>Последний адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip()),$this->maska2->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
 
-            echo '<p>Широковещательный адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2($this->ip()),$this->maska2->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
+            echo '<p>Широковещательный адрес в сети: '.$this->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip()),$this->maska2->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
             
             echo '<form action="IPCalculator.php" method="post">
                       <input type="submit" name="ipSSIDRreset" value="Вернуться" class="button-ipS btn">
@@ -156,20 +159,23 @@ class ClassInterfaceIPCalculator
     }
 
     // функция уточняет содержимое переменной $_SESSION['ipMask']
-    // которая в свое время содержит маску в виде одного числа, числа битов
-    // если значение переменной равно нулю, а все вычисления привязаны к ней
-    // то преобразовать маску из вида 4-х байтового десятичного в вид числа битов адреса
-    function mask4BytTo32Bit()
-    {
-        if ($_SESSION['ipMask']!=0) return;
+    // которая в свое время содержит маску в виде одного числа, 
+    // числа битов
+    // если значение переменной равно нулю, а все вычисления привязаны 
+    // к ней, то преобразовать маску из вида 4-х байтового 
+    // десятичного в вид числа битов адреса
+    // function mask4BytTo32Bit()
+    // {
+    //     if ($_SESSION['ipMask']!=0) return;
+    //     $rez = $_SESSION['mask1'].'.'.$_SESSION['mask2'].'.'.$_SESSION['mask3'].'.'.$_SESSION['mask4'];
 
-        $nomer=$this->ip10To2($this->mask10());
-        $i=0;
-        while (substr($nomer, $i, 1)=='1') {
-            $i++;
-        }
-        $_SESSION['ipMask']=$i;
-    }
+    //     $nomer=$this->ip10To2($rez);
+    //     $i=0;
+    //     while (substr($nomer, $i, 1)=='1') {
+    //         $i++;
+    //     }
+    //     $_SESSION['ipMask']=$i;
+    // }
 
     // функция возвращает IP адрес, создавая его из переменных сессий
     function ip()
@@ -178,22 +184,8 @@ class ClassInterfaceIPCalculator
     }
 
     // функция возвращает маску в десятичном виде, создавая его из переменных сессий
-    function mask10()
-    {
-        return $_SESSION['mask1'].'.'.$_SESSION['mask2'].'.'.$_SESSION['mask3'].'.'.$_SESSION['mask4'];
-    }
-
-    // двоичное представление маски подсети возвращает
-    // function maska2()
+    // function mask10()
     // {
-    //     $maska='';
-    //     $ii=$_SESSION['ipMask'];
-    //     for ($i=1; $i<33; $i++) {
-    //         if ($ii>0) $maska.='1'; else $maska.='0';
-    //         if ($i==8 || $i==16 || $i==24) $maska.=' ';
-    //         $ii--;
-    //     }
-    //     return $maska;
     // }
 
     // десятичное представление маски подсети
@@ -289,11 +281,11 @@ class ClassInterfaceIPCalculator
 
     // функция переводит десятичный вид IP адреса или маски в двоичный
     // входной параметр типа 111.111.111.111
-    function ip10To2($nomer2) {
-        $masIp=preg_split ('/\./',$nomer2);
-        $rez=$this->nomer10to2->nomer10to2((int)$masIp[0]).$this->nomer10to2->nomer10to2((int)$masIp[1]).$this->nomer10to2->nomer10to2((int)$masIp[2]).$this->nomer10to2->nomer10to2((int)$masIp[3]);
-        return $rez;
-    }
+    // function ip10To2($nomer2) {
+    //     $masIp=preg_split ('/\./',$nomer2);
+    //     $rez=$this->nomer10to2->nomer10to2((int)$masIp[0]).$this->nomer10to2->nomer10to2((int)$masIp[1]).$this->nomer10to2->nomer10to2((int)$masIp[2]).$this->nomer10to2->nomer10to2((int)$masIp[3]);
+    //     return $rez;
+    // }
 
     // Функция возвращает первый доступный адрес хоста добавляя единицу к адресу сети 
     // если не подавать число хостов
@@ -301,7 +293,7 @@ class ClassInterfaceIPCalculator
     // последний адрес сети
     function firstAddress($adsress, $hostov=1)
     {
-        $address2=$this->ip10To2($adsress);
+        $address2=$this->ip10To2->ip10To2($adsress);
         $nomer=0;
 
         // переводим двоичный адрес в десятичный, чтобы добавить единицу
