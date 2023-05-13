@@ -3,6 +3,13 @@ namespace src\clas;
 
 class ClassInterfaceIPCalculator
 {
+    private  $nomer10to2;
+
+    public function __construct()
+    {
+        $this->nomer10to2 = new Nomer10to2;
+    }
+
     public function interfaceIPCalculatorGroups()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
@@ -278,37 +285,11 @@ class ClassInterfaceIPCalculator
          return $this->maska10($adres);
     }
 
-    // функция переводит десятичный вил IP адреса или маски в двоичный
+    // функция переводит десятичный вид IP адреса или маски в двоичный
     // входной параметр типа 111.111.111.111
     function ip10To2($nomer2) {
         $masIp=preg_split ('/\./',$nomer2);
-        $rez=$this->nomer10to2((int)$masIp[0]).$this->nomer10to2((int)$masIp[1]).$this->nomer10to2((int)$masIp[2]).$this->nomer10to2((int)$masIp[3]);
-        return $rez;
-    }
-
-    // функция перевода десятичного числа в двоичное (1 байт)
-    // $positions=8 определяет сколько знаков должно быть в выходном числе, недостающие заполнятся нулями
-    function nomer10to2($nomer, $positions=8)
-    {
-        $job=true;
-        $nomerJob=$nomer;
-        $rez='';
-
-        // преобразовываем из десятичного в двоичный делением на 2
-        while($job) {
-            $rez.=$nomerJob % 2;
-            $nomerJob=intdiv($nomerJob,2);
-            if ($nomerJob<2) {
-                $rez.=$nomerJob;
-                $job=false;
-            } 
-        }
-        // зеркально разворачиваем строку
-        $rez=strrev($rez);
-        // заполняем нулями недостающие позиции
-        while(strlen($rez)<$positions) {
-            $rez='0'.$rez;
-        }
+        $rez=$this->nomer10to2->nomer10to2((int)$masIp[0]).$this->nomer10to2->nomer10to2((int)$masIp[1]).$this->nomer10to2->nomer10to2((int)$masIp[2]).$this->nomer10to2->nomer10to2((int)$masIp[3]);
         return $rez;
     }
 
@@ -330,7 +311,7 @@ class ClassInterfaceIPCalculator
         // добавляем единицу - это будет первый адрес в сети
         $nomer=$nomer+$hostov;
 
-        return $this->maska10($this->nomer10to2($nomer, 32));
+        return $this->maska10($this->nomer10to2->nomer10to2($nomer, 32));
 
     }
 
