@@ -8,6 +8,7 @@ class ClassInterfaceIPCalculator
     public $ip10To2;
     public $ip;
     private $first;
+    private $network;
 
     public function __construct()
     {
@@ -16,6 +17,7 @@ class ClassInterfaceIPCalculator
         $this->ip10To2 = new Ip10To2;
         new Ip($this);
         $this->first = new FirstAddress($this);
+        $this->network = new NetworkAddressByMaskAndIp;
     }
 
     public function interfaceIPCalculatorGroups()
@@ -145,15 +147,15 @@ class ClassInterfaceIPCalculator
 
             echo '<p>Десятичная маска подсети: '.$this->maska->maska10($this->maska->maska2()).'</p>';
 
-            echo '<p>Адрес сети: '.$this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()).'</p>';
+            echo '<p>Адрес сети: '.$this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()).'</p>';
 
-            echo '<p>Первый адрес в сети: '.$this->first->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2())).'</p>';
+            echo '<p>Первый адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2())).'</p>';
 
             echo '<p>Число хостов в сети: '.NumerHost::createNumerHost()->numerHost().'<p>';
 
-            echo '<p>Последний адрес в сети: '.$this->first->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
+            echo '<p>Последний адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
 
-            echo '<p>Широковещательный адрес в сети: '.$this->first->firstAddress($this->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
+            echo '<p>Широковещательный адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
             
             echo '<form action="IPCalculator.php" method="post">
                       <input type="submit" name="ipSSIDRreset" value="Вернуться" class="button-ipS btn">
@@ -161,30 +163,6 @@ class ClassInterfaceIPCalculator
         }
     }
 
-
-
-
-    
-
-
-    // функция узнает адрес сети по маске и IP адресу хоста
-    function networkAddressByMaskAndIp($ip,$mask)
-    {
-         $ip=str_replace(' ','',$ip);
-         $mask=str_replace(' ','',$mask);
-         $adres='';
-         for ($i=1; $i<33; $i++) {
-             if (substr($ip,$i-1,1)=='1' 
-                 && substr($mask,$i-1,1)=='1') 
-                     $adres.='1'; 
-             else $adres.='0';
-         }
-         return $this->maska->maska10($adres);
-    }
-
-
-
-    
     // функция возвращает число хостов в сети, отнимая от 32-х число битов, 
     // выделенных под адрес сети
     //NumerHost::createNumerHost()->numerHost()
