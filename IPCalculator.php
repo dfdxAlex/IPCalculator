@@ -3,8 +3,6 @@
 //файл сгенерирован CMS-DFDX 2022-03-20 19:06:45
 //file generated CMS-DFDX 2022-03-20 19:06:45
 session_start();
-// require "funcii.php";
-// require "functionDfdx.php";
 require "class/autoloader.php";
 
 use class\redaktor\statistic;
