@@ -106,11 +106,5 @@ class ControlSession
             $_SESSION['mask4']=0;
     }
 
-    // функция определяет можно ли показывать меню пользователя
-    public function showUserMenu()
-    {
-        if ($_SESSION['button-IP-Groups']!='z') return false;
-        if ($_SESSION['ipSSIDR']!=-1) return false;
-        return true;
-    }
+
 }
