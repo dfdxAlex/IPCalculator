@@ -23,7 +23,7 @@ class ClassInterfaceIPCalculator
     }
 
     public function interfaceIPCalculatorGroups()
-    {//echo $this->interfaceTrueFalse;
+    {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
         if ($this->interfaceTrueFalse->showUserMenu()) {
             echo $this->interfaceTrueFalse;
@@ -96,38 +96,4 @@ class ClassInterfaceIPCalculator
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
     }
-
-    public function interfaceIPCalculatorCIDR()
-    {
-        if ($this->interfaceTrueFalse->showUserMenu()) ;
-        
-        else if ($_SESSION['ipSSIDR']==0) {
-
-            new Mask4BytTo32Bit;
-            
-            echo '<p>Вы проверяете адрес: '.$this->ip.'</p>';
-
-            echo '<p>Двоичная маска подсети: '.$this->maska->maska2().'</p>';
-
-            echo '<p>Десятичная маска подсети: '.$this->maska->maska10($this->maska->maska2()).'</p>';
-
-            echo '<p>Адрес сети: '.$this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()).'</p>';
-
-            echo '<p>Первый адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2())).'</p>';
-
-            echo '<p>Число хостов в сети: '.NumerHost::createNumerHost()->numerHost().'<p>';
-
-            echo '<p>Последний адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),NumerHost::createNumerHost()->numerHost()).'</p>';
-
-            echo '<p>Широковещательный адрес в сети: '.$this->first->firstAddress($this->network->networkAddressByMaskAndIp($this->ip10To2->ip10To2($this->ip),$this->maska->maska2()),(1+NumerHost::createNumerHost()->numerHost())).'</p>';
-            
-            echo '<form action="IPCalculator.php" method="post">
-                      <input type="submit" name="ipSSIDRreset" value="Вернуться" class="button-ipS btn">
-                  </form>';
-        }
-    }
-
-    // функция возвращает число хостов в сети, отнимая от 32-х число битов, 
-    // выделенных под адрес сети
-    //NumerHost::createNumerHost()->numerHost()
 }

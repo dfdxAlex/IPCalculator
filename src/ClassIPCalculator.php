@@ -32,6 +32,7 @@ class ClassIPCalculator
         // Tam dzieje się cała logika biznesowa
         // The function draws an interface for the user when working with CIDR networks.
         // All business logic happens there
-        $interface->interfaceIPCalculatorCIDR();
+        $obj = new clas\InterfaceIPCalculatorCIDR;
+        $obj->interfaceIPCalculatorCIDR();
     }
 }
