@@ -40,6 +40,7 @@ class ClassInterfaceIPCalculator
                           <p>Число сетей типа A с адресами IPv4 может быть 127</p>
                           <p>Число хостов или пользователей в сети типа A с адресами IPv4 может быть 16 777 216</p>
                       </div>';
+                echo new ButtonReturn;
             }
 
             if ($_SESSION['button-IP-Groups']=='B') {
@@ -53,6 +54,7 @@ class ClassInterfaceIPCalculator
                           <p>Число сетей типа B с адресами IPv4 может быть 16 384</p>
                           <p>Число хостов или пользователей в сети типа B с адресами IPv4 может быть 65 536</p>
                       </div>';
+                echo new ButtonReturn;
             }
 
             if ($_SESSION['button-IP-Groups']=='C') {
@@ -66,7 +68,7 @@ class ClassInterfaceIPCalculator
                           <p>Число сетей типа C с адресами IPv4 может быть 2 097 152</p>
                           <p>Число хостов или пользователей в сети типа C с адресами IPv4 может быть 256</p>
                       </div>';
-
+                echo new ButtonReturn;
             }
 
             if ($_SESSION['button-IP-Groups']=='D') {
@@ -76,6 +78,7 @@ class ClassInterfaceIPCalculator
                           <p>Сеть находится в адресном пространстве 224.0.0.0-239.255.255.255</p>
                           <p>Используются адреса для многоадресной рассылки multicast</p>
                       </div>';
+                echo new ButtonReturn;
             }
 
             if ($_SESSION['button-IP-Groups']=='E') {
@@ -85,14 +88,11 @@ class ClassInterfaceIPCalculator
                           <p>Сеть находится в адресном пространстве 240.0.0.0-255.255.255.255</p>
                           <p>Зарегистрированы для будущего использования</p>
                       </div>';
+                echo new ButtonReturn;
             }
 
             // показать кнопку сбросса
-            echo '<div class="interface-ip-calculator-div">
-                      <form action="IPCalculator.php" method="post">
-                          <input class="button-IP-Groups btn" name="button-IP-Groups-reset" type="submit" value="Вернуться к выбору">
-                      </form>
-                  </div>';
+            
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////\\\
     }
