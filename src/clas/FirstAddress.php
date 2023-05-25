@@ -25,14 +25,22 @@ class FirstAddress extends Bit32
         $nomer=0;
 
         // переводим двоичный адрес в десятичный, чтобы добавить единицу
-        for ($i=1; $i<33; $i++) {
-             if (substr($address2,$i-1,1)=='1') $nomer+=$this->bit32($i);
-        }
-        if ($nomer>4294967294) return 'В этой сети нет свободных адресов:)';
+        for ($i=1; $i<33; $i++) 
+             if (substr($address2,$i-1,1)=='1') 
+                 $nomer+=$this->bit32($i);
+
+        if ($nomer>4294967294) 
+            return 'В этой сети нет свободных адресов:)';
 
         // добавляем единицу - это будет первый адрес в сети
         $nomer=$nomer+$hostov;
 
-        return $this->in->maska->maska10($this->in->nomer10to2->nomer10to2($nomer, 32));
+        return $this
+               ->in
+               ->maska
+               ->maska10($this
+                         ->in
+                         ->nomer10to2
+                         ->nomer10to2($nomer, 32));
     }
 }
