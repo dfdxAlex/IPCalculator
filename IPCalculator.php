@@ -24,7 +24,7 @@ $header->headStart('<title>ipCalculator</title>');
 
 // alteration for an independent project with disabling styles from the dfdx site
 // переделка под самостоятельный проект с отключением стилей от сайта dfdx
-$header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('styliipCalculator.css')]);echo '</head>';
+$header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('src\css\styliipCalculator.css')]);echo '</head>';
 echo '<body>';
 
 // функция создает переменные сессий при первом посещении страницы

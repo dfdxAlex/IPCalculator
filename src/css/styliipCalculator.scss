@@ -1,0 +1,19 @@
+@import "footer";
+@import "ipv4CIDR";
+@import "сlassInterfaceIPCalculator";
+
+body {
+    min-height: 700px;
+}
+
+/* Лого */
+[src="image/logo.png"] {
+    float: right;
+}
+
+/* главное окно контента */
+[class="container-fluid"] {
+    margin-left: 50px;
+    width: 80%;
+    min-height: 600px;
+}
