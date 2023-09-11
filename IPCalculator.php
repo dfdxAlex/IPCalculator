@@ -33,7 +33,7 @@ $header->firstCreationSessionVariables();
 
 //работа от имени администратор
 //work a administrator
-$_SESSION['status']=5;
+// $_SESSION['status']=5;
 
 // Функция выводит картинку шапки
 // The function displays the header image
