@@ -10,17 +10,22 @@ use class\redaktor\Header;
 use class\redaktor\futter;
 use src\ClassIPCalculator;
 
+use class\redaktor\interface\trait\toHeader\HeadStartDecorator;
+
 $statistik = new statistic();
 $header = new Header();
 $futter = new futter();
 $ipCalculator = new ClassIPCalculator();
 
-echo '<!DOCTYPE html>';
-echo '<html lang="ru">';
-echo '<head>';
+
+
+// echo '<!DOCTYPE html>';
+// echo '<html lang="ru">';
+// echo '<head>';
 
 //This is Header
-$header->headStart('<title>ipCalculator</title>');
+echo new HeadStartDecorator('<title>ipCalculator</title>');
+// $header->headStart('<title>ipCalculator</title>');
 
 // alteration for an independent project with disabling styles from the dfdx site
 // переделка под самостоятельный проект с отключением стилей от сайта dfdx
