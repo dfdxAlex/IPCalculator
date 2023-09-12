@@ -6,36 +6,22 @@ session_start();
 require "class/autoloader.php";
 
 use class\redaktor\statistic;
-use class\redaktor\Header;
 use class\redaktor\futter;
 use src\ClassIPCalculator;
 
-use src\clas\forIPCalculator\HeadStartDecorator;
-use src\clas\forIPCalculator\HeadBootStrap5Decorator;
+use src\clas\forIPCalculator\CreateHeader;
 
 $statistik = new statistic();
-$header = new Header();
 $futter = new futter();
 $ipCalculator = new ClassIPCalculator();
 
-//This is Header
-echo new HeadStartDecorator('<title>ipCalculator</title>');
-
-new HeadBootStrap5Decorator([\class\nonBD\SearchPathFromFile::createObj()->searchPath('src\css\styliipCalculator.css')]);
-// echo '</head>';
-// echo '<body>';
-
-// функция создает переменные сессий при первом посещении страницы
-// function creates session variables on first visit to the page
-$header->firstCreationSessionVariables();
+new CreateHeader();
 
 //работа от имени администратор
 //work a administrator
 // $_SESSION['status']=5;
 
-// Функция выводит картинку шапки
-// The function displays the header image
-$header->showSiteHeader('image/logo.png');
+
 
 /////////////////////////// open center
 echo '<section class="container-fluid">';
