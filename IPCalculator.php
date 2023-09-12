@@ -5,15 +5,11 @@
 session_start();
 require "class/autoloader.php";
 
-use class\redaktor\statistic;
-use class\redaktor\futter;
 use src\ClassIPCalculator;
 
 use src\clas\forIPCalculator\CreateHeader;
 use class\nonBD\user\UserStatusManager;
 
-$statistik = new statistic();
-$futter = new futter();
 $ipCalculator = new ClassIPCalculator();
 
 new CreateHeader();
@@ -34,7 +30,6 @@ echo '</div>';     //close center row
 echo '</section>'; //close center section
 
 
-// Функция выводит нижнюю часть сайта
 // The function displays the bottom of the site
 use class\classNew\futter\FutterGeneral;
 new FutterGeneral("ipCalculator");
