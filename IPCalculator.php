@@ -11,26 +11,20 @@ use class\redaktor\futter;
 use src\ClassIPCalculator;
 
 use class\redaktor\interface\trait\toHeader\HeadStartDecorator;
+use src\clas\forIPCalculator\HeadBootStrap5Decorator;
+use class\redaktor\interface\trait\toHeader\HeadBootStrap5;
 
 $statistik = new statistic();
 $header = new Header();
 $futter = new futter();
 $ipCalculator = new ClassIPCalculator();
 
-
-
-// echo '<!DOCTYPE html>';
-// echo '<html lang="ru">';
-// echo '<head>';
-
 //This is Header
 echo new HeadStartDecorator('<title>ipCalculator</title>');
-// $header->headStart('<title>ipCalculator</title>');
 
-// alteration for an independent project with disabling styles from the dfdx site
-// переделка под самостоятельный проект с отключением стилей от сайта dfdx
-$header->headBootStrap5([\class\nonBD\SearchPathFromFile::createObj()->searchPath('src\css\styliipCalculator.css')]);echo '</head>';
-echo '<body>';
+new HeadBootStrap5Decorator([\class\nonBD\SearchPathFromFile::createObj()->searchPath('src\css\styliipCalculator.css')]);
+// echo '</head>';
+// echo '<body>';
 
 // функция создает переменные сессий при первом посещении страницы
 // function creates session variables on first visit to the page
