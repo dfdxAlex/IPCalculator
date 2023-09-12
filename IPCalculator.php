@@ -40,6 +40,6 @@ echo '</section>'; //close center section
 // The function displays the bottom of the site
 $futter->futterGeneral($statistik,$metka);
 
-// функция подключает вторую часть бутстрапа и закрывает документ html
-// the function connects the second part of the bootstrap and closes the html document
-$futter->closeHtmlDok();
+
+use class\classNew\futter\HtmlClose;
+new HtmlClose;
