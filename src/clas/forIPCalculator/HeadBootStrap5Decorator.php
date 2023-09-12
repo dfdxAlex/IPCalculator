@@ -9,5 +9,4 @@ class HeadBootStrap5Decorator
     {
         echo new HeadBootStrap5($listFileStyleDecorator).'</head> <body>';
     }
-
- }
+}

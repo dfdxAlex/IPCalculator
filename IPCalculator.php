@@ -10,9 +10,8 @@ use class\redaktor\Header;
 use class\redaktor\futter;
 use src\ClassIPCalculator;
 
-use class\redaktor\interface\trait\toHeader\HeadStartDecorator;
+use src\clas\forIPCalculator\HeadStartDecorator;
 use src\clas\forIPCalculator\HeadBootStrap5Decorator;
-use class\redaktor\interface\trait\toHeader\HeadBootStrap5;
 
 $statistik = new statistic();
 $header = new Header();
