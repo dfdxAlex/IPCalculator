@@ -25,9 +25,6 @@ echo '<section class="container-fluid">';
 echo '<div class="row">';
 echo '<div class="col-xl-8 col-lg-8 col-md-9 col-sm-8 col-12">';  
 
-//метка для счётчика статистики посещения конкретной страницы
-//label for the statistics counter of visits to a specific page
-$metka="ipCalculator";
 
 // Запуск объекта, который определяет бизнес логику данной страницы
 // Run an object that defines the business logic of this page
@@ -36,10 +33,11 @@ echo '</div>';     //close center col
 echo '</div>';     //close center row
 echo '</section>'; //close center section
 
+
 // Функция выводит нижнюю часть сайта
 // The function displays the bottom of the site
-$futter->futterGeneral($statistik,$metka);
-
+use class\classNew\futter\FutterGeneral;
+new FutterGeneral("ipCalculator");
 
 use class\classNew\futter\HtmlClose;
 new HtmlClose;
