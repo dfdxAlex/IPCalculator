@@ -14,6 +14,8 @@ class ClassIPCalculator
         // funkcja analizuje tablicę POST i w razie potrzeby modyfikuje zmienne sesji
         // the function parses the POST array and modifies session variables if necessary
         $controlSession->varSet();
+
+        $this->businesIPCalculator();
     }
 
     public function businesIPCalculator()
