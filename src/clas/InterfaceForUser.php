@@ -19,7 +19,7 @@ class InterfaceForUser
                '<div class="interface-ip-calculator-div">
                   <form action="IPCalculator.php" method="post">
                     <p class="IP-Groups-p">
-                      Выбрать класс сети
+                      Select network class
                     </p>
                     <div class="select-IP-Groups-div">
                       <select 
@@ -27,19 +27,19 @@ class InterfaceForUser
                         class="select-IP-Groups"
                       >
                         <option value="A">
-                          Класc A
+                          Class A
                         </option>
                         <option value="B">
-                          Класс B
+                          Class B
                         </option>
                         <option value="C">
-                          Класс C
+                          Class C
                         </option>
                         <option value="D">
-                          Класс D
+                          Class D
                         </option>
                         <option value="E">
-                          Класс E
+                          Class E
                         </option>
                       </select>
                     </div>
@@ -47,14 +47,14 @@ class InterfaceForUser
                       class="button-IP-Groups btn" 
                       name="button-IP-Groups" 
                       type="submit" 
-                      value="Показать характеристики"
+                      value="Show characteristics"
                     >
                   </form>
                 </div> 
                 <div class="IPV4-CIDR">
                   <form action="IPCalculator.php" method="post">
                     <h3>IPV4 CIDR</h3>
-                    <p>IP адрес</p>
+                    <p>IP</p>
                     <input 
                       type="text" 
                       name="ipS1" 
@@ -89,13 +89,13 @@ class InterfaceForUser
                     <input 
                       type="submit" 
                       name="ipSSIDR" 
-                      value="Считаем" 
+                      value="Calculation" 
                       class="button-ipS 
                       btn"
                     >
                     <br>
                     <br>
-                    <p>Маска сети в виде 4 байт</p>
+                    <p>Network mask as 4 bytes</p>
                     <input 
                       type="text" 
                       name="mask1" 

@@ -5,10 +5,10 @@ class TextStart
 {
     public function __toString()
     {
-        return '<h3>Параметры сети класса '.$_SESSION['button-IP-Groups'].'</h3>
-        <p>Все адресное пространство занимает 32 бита. 
-        Записывается в десятичном виде и состоит из 4 однобайтовых чисел, 
-        разделенных точкой, однако компьютер их принимает как 32 бита одним 
-        значением.</p>';
+        return '<h3>Class network parameters '.$_SESSION['button-IP-Groups'].'</h3>
+        <p>The entire address space is 32 bits.
+        It is written in decimal form and consists of 4 single-byte numbers,
+        separated by a dot, but the computer accepts them as 32 bits in one
+        meaning.</p>';
     }
 }

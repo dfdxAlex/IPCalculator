@@ -7,27 +7,27 @@ class GroupA
     {
         return '<div class="network-parameter">
                   <p>
-                    Сеть данного класса маркируется нулем в первом бите данного 
-                    32-битного числа.
+                    A network of this class is marked with a zero in the first bit of this
+                    32-bit number.
                   </p>
                   <p>
-                    Остальные 31 бит содержат информацию об адресе самой сети 
-                    и о конкретном хосте(компьютере)
+                    The remaining 31 bits contain information about the address of the network itself
+                    and about a specific host (computer)
                   </p>
                   <p>
-                    Адрес данной сети задается первым байтом, а так, как его 
-                    первый бит занят нулем всегда, то для определения адреса 
-                    остается 7 бит или 127 различных адресов.
+                    The address of this network is specified by the first byte, and as it is
+                    the first bit is always occupied by zero, then to determine the address
+                    That leaves 7 bits or 127 different addresses.
                   </p>
                   <p>
-                    Остальные 3 числа или 24 бита задают адрес хоста. 
-                    Хостов в данной сети может быть 16 777 216
+                    The remaining 3 numbers or 24 bits specify the host address.
+                    There can be 16,777,216 hosts in this network
                   </p>
-                  <h4>Резюме:</h4>
-                  <p>Число сетей типа A с адресами IPv4 может быть 127</p>
+                  <h4>Summary:</h4>
+                  <p>The number of Type A networks with IPv4 addresses can be 127</p>
                   <p>
-                    Число хостов или пользователей в сети типа A с адресами 
-                    IPv4 может быть 16 777 216
+                    Number of hosts or users on a type A network with addresses
+                    IPv4 can be 16,777,216
                   </p>
                 </div>';
     }

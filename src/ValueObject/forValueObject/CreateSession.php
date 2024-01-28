@@ -1,6 +1,10 @@
 <?php
 namespace src\ValueObject\forValueObject;
 
+/**
+ * refactoring 13.09.2023
+ */
+
 use \src\ValueObject\forValueObject\SetSessionFromPost;
 
 class CreateSession extends SetSessionFromPost

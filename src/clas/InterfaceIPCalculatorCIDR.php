@@ -28,16 +28,16 @@ class InterfaceIPCalculatorCIDR
         else if ($_SESSION['ipSSIDR']==0) {
             new Mask4BytTo32Bit;
             echo "<p>
-                    Вы проверяете адрес: $this->ip
+                    You are checking the address: $this->ip
                   </p>";
 
             echo "<p>
-                    Двоичная маска подсети: 
+                    Binary subnet mask: 
                     {$this->maska->maska2()}
                   </p>";
 
             echo "<p>
-                   Десятичная маска подсети: 
+                   Decimal subnet mask: 
                    {$this->maska->maska10($this->maska->maska2())}
                   </p>";
 
@@ -45,7 +45,7 @@ class InterfaceIPCalculatorCIDR
                       $this->ip10To2->ip10To2($this->ip),
                       $this->maska->maska2());
             echo "<p>
-                    Адрес сети: 
+                    Network address: 
                     $maska2
                   </p>";
 
@@ -56,17 +56,17 @@ class InterfaceIPCalculatorCIDR
                           )
                        );
             echo "<p>
-                    Первый адрес в сети: 
+                    First address on the network: 
                     $maska2
                   </p>";
 
             $numerHost = NumerHost::createNumerHost()->numerHost();
             echo "<p>
-                    Число хостов в сети: 
+                    Number of hosts on the network: 
                     $numerHost
                   </p>";
 
-            echo '<p>Последний адрес в сети: '
+            echo '<p>Last address on the network: '
                    .$this->first->firstAddress(
                         $this->network->networkAddressByMaskAndIp(
                             $this->ip10To2->ip10To2($this->ip),
@@ -77,7 +77,7 @@ class InterfaceIPCalculatorCIDR
                   '</p>';
 
             echo '<p>
-                    Широковещательный адрес в сети: '.
+                    Broadcast address on the network: '.
                     $this->first->firstAddress(
                         $this->network->networkAddressByMaskAndIp(
                             $this->ip10To2->ip10To2($this->ip),
@@ -95,7 +95,7 @@ class InterfaceIPCalculatorCIDR
                     <input 
                       type="submit" 
                       name="ipSSIDRreset" 
-                      value="Вернуться" 
+                      value="Return" 
                       class="button-ipS btn"
                     >
                   </form>';

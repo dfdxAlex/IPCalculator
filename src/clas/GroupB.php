@@ -6,33 +6,26 @@ class GroupB
     public function __toString()
     {
         return '<div class="network-parameter">
-                  <p>
-                    Сеть данного класса маркируется единицей и нулем 
-                    в первых двух битах (10) данного 32-битного числа.
-                  </p>
-                  <p>
-                    Остальные 30 бит содержат информацию об адресе 
-                    самой сети и о конкретном хосте(компьютере)
-                  </p>
-                  <p>
-                    Адрес данной сети задается первыми двумя байтами,
-                    а так, как его первые два бита заняты всегда, 
-                    то для определения адреса остается 14 бит или 
-                    16 384 различных адресов.
-                  </p>
-                  <p>
-                    Остальные 2 числа или 16 бит задают адрес хоста. 
-                    Хостов в данной сети может быть 65 536
-                  </p>
-                  <h4>Резюме:</h4>
-                  <p>
-                    Число сетей типа B с адресами IPv4 может быть 
-                    16 384
-                  </p>
-                  <p>
-                    Число хостов или пользователей в сети типа B 
-                    с адресами IPv4 может быть 65 536
-                  </p>
+        <p>
+            In this class, the network is marked by a combination of ones and zeros in the first two bits (10) of this 32-bit number.
+        </p>
+        <p>
+            The remaining 30 bits contain information about the network address and a specific host (computer).
+        </p>
+        <p>
+            The network address is determined by the first two bytes, and since the first two bits are always occupied, there are 14 bits or 16,384 different addresses available for network addressing.
+        </p>
+        <p>
+            The remaining 2 numbers or 16 bits define the host address. In this network, there can be 65,536 hosts.
+        </p>
+        <h4>Summary:</h4>
+        <p>
+            The number of Class B networks with IPv4 addresses can be 16,384.
+        </p>
+        <p>
+            The number of hosts or users in a Class B network with IPv4 addresses can be 65,536.
+        </p>
+    
                 </div>';
     }
 }

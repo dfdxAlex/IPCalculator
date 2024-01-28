@@ -5,17 +5,16 @@ class GroupE
 {
     public function __toString()
     {
-        return '<div class="network-parameter">
-                  <p>Сеть данного класса маркируется единицей, 
-                     единицей, единицей и нулем в первых четырех 
-                     битах (1111) данного 32-битного числа.
-                  </p>
-                  <p>Сеть находится в адресном пространстве 
-                    240.0.0.0-255.255.255.255
-                  </p>
-                  <p>
-                    Зарегистрированы для будущего использования
-                  </p>
-                </div>';
+      return '<div class="network-parameter">
+        <p>
+          In this class, the network is marked by four bits: one, one, one, and zero (1111) of this 32-bit number.
+        </p>
+        <p>
+          The network is located in the address space 240.0.0.0-255.255.255.255.
+        </p>
+        <p>
+          Reserved for future use.
+        </p>
+      </div>';
     }
 }

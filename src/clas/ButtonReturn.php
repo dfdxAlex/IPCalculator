@@ -15,7 +15,7 @@ class ButtonReturn
                      class="button-IP-Groups btn" 
                      name="button-IP-Groups-reset" 
                      type="submit" 
-                     value="Вернуться к выбору"
+                     value="Return to selection"
                    >
                  </form>
                </div>';

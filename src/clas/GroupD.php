@@ -5,17 +5,17 @@ class GroupD
 {
     public function __toString()
     {
-        return '<div class="network-parameter">
-                  <p>Сеть данного класса маркируется единицей, 
-                     единицей, единицей и нулем в первых четырех 
-                     битах (1110) данного 32-битного числа.
-                  </p>
-                  <p>Сеть находится в адресном пространстве 
-                     224.0.0.0-239.255.255.255
-                  </p>
-                  <p>Используются адреса для многоадресной 
-                     рассылки multicast
-                  </p>
-                </div>';
+      return '<div class="network-parameter">
+          <p>
+            In this class, the network is marked by four bits: one, one, one, and zero (1110) of this 32-bit number.
+          </p>
+          <p>
+            The network is located in the address space 224.0.0.0-239.255.255.255.
+          </p>
+          <p>
+            Addresses in this range are used for multicast transmissions.
+          </p>
+      </div>';
+
     }
 }
